@@ -7,29 +7,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Наручные часы</title>
 </head>
-<body>
+<body class="light-theme">
 
     <header class="page-header">
-        <div class="nav-container">
+        <div class="header-container">
             <a href="#" class="logo-link">
                 <img src="img/logo.svg" alt="Логотип магазина" class="logo-img" width="100">
             </a>
             <nav class="page-navigation">
                 <ul class="navigation-list">
                     <li class="navigation-item">
-                        <a href="#catalog-female" class="navigation-link">Женские часы</a>
+                        <a href="#catalog-female" class="header-navigation-link navigation-link">Женские часы</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="#catalog-male" class="navigation-link">Мужские часы</a>
+                        <a href="#catalog-male" class="header-navigation-link navigation-link">Мужские часы</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="#catalog-sport" class="navigation-link">Спортивные часы</a>
+                        <a href="#catalog-sport" class="header-navigation-link navigation-link">Спортивные часы</a>
                     </li>
                     <li class="navigation-item">
-                        <a href="#contacts" class="navigation-link">Контакты</a>
+                        <a href="#contacts" class="header-navigation-link navigation-link">Контакты</a>
                     </li>
                 </ul>
             </nav>
+            <button class="theme fa-solid fa-moon"></button>
         </div>
     </header>
 
@@ -149,56 +150,62 @@
 
             </div>
         </section>
-        <section class="contacts">
+        <section class="contacts" id="contacts">
             <h2 class="visually-hidden">Контакты</h2>
             <p class="contacts-title">Остались вопросы?</p>
-            <div class="contacts-text">
-                <p class="address">Адрес: Загородный просп., 29, Санкт-Петербург</p>
-                <p class="time">Режим работы: ежедневно 10:00-22:00</p>
-                <p class="email">Электронная почта: <a href="mailto:lidiapetroshenok@gmail.com">lidiapetroshenok@gmail.com</a></p>
-                <p class="phone">Телефон: +79317854657</p>
+            <div class="contacts-info">
+                <div class="contacts-text">
+                    <p class="address">Адрес: Загородный просп., 29, Санкт-Петербург</p>
+                    <p class="time">Режим работы: ежедневно 10:00-22:00</p>
+                    <p class="email">Электронная почта: <a class="email-link" href="mailto:lidiapetroshenok@gmail.com">lidiapetroshenok@gmail.com</a></p>
+                    <p class="phone">Телефон: <a class="phone-link" href="tel:+79317854657">+79317854657</a></p>
+                </div>
+                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d499.87476164051975!2d30.335989319701355!3d59.92386092827031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469631ab95af1373%3A0xe2a00b1a0268fb4b!2sstornado!5e0!3m2!1sru!2sru!4v1683796449597!5m2!1sru!2sru" allowfullscreen="" loading="lazy"></iframe>
             </div>
-            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d499.87476164051975!2d30.335989319701355!3d59.92386092827031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469631ab95af1373%3A0xe2a00b1a0268fb4b!2sstornado!5e0!3m2!1sru!2sru!4v1683796449597!5m2!1sru!2sru" width="600" height="400" allowfullscreen="" loading="lazy"></iframe>
         </section>
+        <button class="top-button fa-solid fa-arrow-up"></button>
     </main>
 
     <footer class="page-footer">
-        <ul class="footer-navigation">
-            <li class="footer-navigation-item">
-                <a href="#catalog-female" class="footer-navigation-link">Женские часы</a>
-            </li>
-            <li class="footer-navigation-item">
-                <a href="#catalog-male" class="footer-navigation-link">Мужские часы</a>
-            </li>
-            <li class="footer-navigation-item">
-                <a href="#catalog-sport" class="footer-navigation-link">Спортивные часы</a>
-            </li>
-            <li class="footer-navigation-item">
-                <a href="#contacts" class="footer-navigation-link">Контакты</a>
-            </li>
-        </ul>
-        <ul class="socials">
-            <li class="socials-item">
-                <a href="https://vk.com/l_i_d_m_i" class="socials-link">
-                    <p class="visually-hidden">Ссылка на официальную страницу ВКонтакте</p>
-                    <p class="socials-icon fa-brands fa-vk"></p>
-                </a>
-            </li>
-            <li class="socials-item">
-                <a href="https://t.me/L_I_D_M_I" class="socials-link">
-                    <p class="visually-hidden">Ссылка на официальный канал в Телеграм</p>
-                    <p class="socials-icon fa-brands fa-telegram"></p>
-                </a>
-            </li>
-            <li class="socials-item">
-                <a href="https://www.youtube.com" class="socials-link">
-                    <p class="visually-hidden">Ссылка на официальный канал на YouTube</p>
-                    <p class="socials-icon fa-brands fa-youtube"></p>
-                </a>
-            </li>
-        </ul>
-        <p>Сделано <span>Lidmi</span>. &copy 2023 Интернет-магазин наручных часов.</p>
+        <div class="footer-container">
+            <ul class="footer-navigation">
+                <li class="footer-navigation-item">
+                    <a href="#catalog-female" class="footer-navigation-link navigation-link">Женские часы</a>
+                </li>
+                <li class="footer-navigation-item">
+                    <a href="#catalog-male" class="footer-navigation-link navigation-link">Мужские часы</a>
+                </li>
+                <li class="footer-navigation-item">
+                    <a href="#catalog-sport" class="footer-navigation-link navigation-link">Спортивные часы</a>
+                </li>
+                <li class="footer-navigation-item">
+                    <a href="#contacts" class="footer-navigation-link navigation-link">Контакты</a>
+                </li>
+            </ul>
+            <ul class="socials">
+                <li class="socials-item">
+                    <a href="https://vk.com/l_i_d_m_i" class="socials-link">
+                        <p class="visually-hidden">Ссылка на официальную страницу ВКонтакте</p>
+                        <p class="socials-icon fa-brands fa-vk"></p>
+                    </a>
+                </li>
+                <li class="socials-item">
+                    <a href="https://t.me/L_I_D_M_I" class="socials-link">
+                        <p class="visually-hidden">Ссылка на официальный канал в Телеграм</p>
+                        <p class="socials-icon fa-brands fa-telegram"></p>
+                    </a>
+                </li>
+                <li class="socials-item">
+                    <a href="https://www.youtube.com" class="socials-link">
+                        <p class="visually-hidden">Ссылка на официальный канал на YouTube</p>
+                        <p class="socials-icon fa-brands fa-youtube"></p>
+                    </a>
+                </li>
+            </ul>
+            <p class="copyrights">Сделано <a href="https://github.com/Lidmi?tab=repositories" class="credit-link">Lidmi</a>. &copy 2023 Интернет-магазин наручных часов.</p>
+        </div>
     </footer>
+
     <script src="JS/script.js"></script>
 </body>
 </html>
