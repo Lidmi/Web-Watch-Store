@@ -52,7 +52,11 @@ body {
     right: 2rem;
     bottom: 5rem;
     border-radius: .5rem;
+}
+
+.top-button:hover {
     cursor: pointer;
+    background-color:  rgba(172, 166, 166, 0.6);
 }
 
 .page-header {
@@ -113,6 +117,7 @@ body {
 
 .theme:hover {
     cursor: pointer;
+    color: var(--button-hover);
 }
 
 .welcome {

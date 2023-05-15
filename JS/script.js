@@ -34,3 +34,60 @@ function scrollFunction() {
         topBtn.style.display = "none";
     }
 }
+
+let date = document.querySelectorAll('.item-date');
+
+function getDayInfo() {
+    for (let i = 0; i < date.length; i++) {
+
+        let weekNum = 0;
+        let dateStr = date[i].innerText;
+        let day = dateStr[0] + dateStr[1];
+        let month = (dateStr[3] + dateStr[4]) - 1;
+        let year = dateStr[6] + dateStr[7] + dateStr[8] + dateStr[9];
+
+        let newDate = new Date(year, month, day);
+        let firstDay= new Date(year, month, 1);
+
+        let firstMon = 8 - firstDay.getDay() + 1;
+
+        if (day >= 1 & day < firstMon) {
+            weekNum = 1;
+        } else if (day >= firstMon & day < firstMon + 7 ) {
+            weekNum = 2;
+        } else if (day >= firstMon + 7 & day < firstMon + 14 ) {
+            weekNum = 3;
+        } else if (day >= firstMon + 14 & day < firstMon + 21 ) {
+            weekNum = 4;
+        } else if (day >= firstMon + 21 & day < firstMon + 28 ) {
+            weekNum = 5;
+        }
+
+        var optionsDay= {
+            weekday: 'long',
+        }
+
+        let monthName = ['Января',
+         'Февраля',
+         'Марта',
+         'Апреля',
+         'Мая',
+         'Июня',
+         'Июля',
+         'Августа',
+         'Сентября',
+         'Октября',
+         'Ноября',
+         'Декабря'];
+        
+          let weekStr =newDate.toLocaleString("ru", optionsDay);
+          date[i].innerText = weekStr.replace(weekStr[0], weekStr[0].toUpperCase()) + ', '+ weekNum + ' неделя '+ monthName[newDate.getMonth()] + ' '+newDate.getFullYear() + ' года';
+
+    }
+}
+
+ getDayInfo();
+
+
+
+  
