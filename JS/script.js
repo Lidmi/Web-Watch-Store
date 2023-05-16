@@ -2,6 +2,10 @@ let themeBtn = document.querySelector('.theme');
 let body = document.querySelector('body');
 let topBtn = document.querySelector('.top-button');
 let logo = document.querySelector('.logo-img');
+let buyBtn = document.querySelectorAll('.buy-button');
+let buyForm = document.querySelector('.form-wrap');
+let closeBtn = document.querySelector('.close');
+let itemForm = document.querySelector('.item-info');
 
 themeBtn.onclick = function() {
     if (body.classList.contains('light-theme')) {
@@ -16,6 +20,7 @@ themeBtn.onclick = function() {
         body.classList.remove('dark-theme');
         document.documentElement.style.setProperty('--bg','white');
         document.documentElement.style.setProperty('--text-color','black');
+        document.documentElement.style.setProperty('--button-hover','#747272');
         logo.src='img/logo.svg';
     }
 }
@@ -90,4 +95,27 @@ function getDayInfo() {
 
 
 
-  
+
+ for (let i = 0; i < buyBtn.length; i++) {
+    buyBtn[i].onclick = function () {
+        let item;
+        let img = itemForm.querySelector('.item-img');
+        let itemName = itemForm.querySelector('.item-name');
+        let itemDate = itemForm.querySelector('.item-date-text');
+        let itemCost = itemForm.querySelector('.item-cost');
+        
+        item = buyBtn[i].closest('.catalog-item').cloneNode(true);
+        img.replaceWith(item.querySelector('.item-img'));
+        itemName.replaceWith(item.querySelector('.item-name'));
+        itemDate.replaceWith(item.querySelector('.item-date-text'));
+        itemCost.replaceWith(item.querySelector('.item-cost'));
+
+        buyForm.classList.remove('hidden');
+        buyForm.classList.add('active');
+    }
+ }
+
+closeBtn.onclick = function () {
+    buyForm.classList.remove('active');
+    buyForm.classList.add('hidden');
+}

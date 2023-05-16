@@ -2,6 +2,7 @@
 
 :root {
     --bg: white;
+    --modal-bg: rgba(0, 0, 0, 0.2);
     --text-color: black;
     --text-color-second: #747272;
     --button-bg: rgb(153, 148, 148);
@@ -156,6 +157,128 @@ body {
 .catalog {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.form-wrap {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--modal-bg);
+}
+
+.hidden {
+    display: none;
+}
+
+.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.catalog-form {
+    background-color: var(--bg);
+    border-radius: 1rem;
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    width: 60%;
+    height: 50%;
+}
+
+.close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    border: none;
+    background-color: transparent;
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+.close:hover {
+    cursor: pointer;
+    color: var(--button-hover);
+}
+
+.item-info {
+    margin: 1rem 2rem;
+}
+
+.form {
+    margin: 0 2rem;
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.field {
+    border: none;
+    padding: 0;
+}
+
+.form-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.input-count {
+    width: 1rem;
+}
+
+.buttons-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.custom-radio+.field-title {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+.custom-radio+.field-title::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 2px solid #b4b4b4;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+
+.custom-radio+label:hover::before {
+    border-color: #4e4e4e;
+}
+
+.custom-radio:active+label::before {
+    background-color: #4e4e4e;
+    border-color: #5c5c5c;
+}
+
+.custom-radio:checked+label::before {
+    border-color: #686868;
+    background-color: var(--button-hover);
+    /* background-image: url(""); */
+}
+
+.comment-area {
+    width: 80%;
+    resize: none;
+}
+
+.submit-button {
+    align-self: center;
 }
 
 .catalog-list {
