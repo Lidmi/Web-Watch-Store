@@ -6,14 +6,16 @@ let buyBtn = document.querySelectorAll('.buy-button');
 let buyForm = document.querySelector('.form-wrap');
 let closeBtn = document.querySelector('.close');
 let itemForm = document.querySelector('.item-info');
+let form = document.querySelector('.form');
 
 themeBtn.onclick = function() {
     if (body.classList.contains('light-theme')) {
         body.classList.remove('light-theme');
         body.classList.add('dark-theme');
-        document.documentElement.style.setProperty('--bg','black');
+        document.documentElement.style.setProperty('--bg','#28262b');
         document.documentElement.style.setProperty('--text-color','white');
         document.documentElement.style.setProperty('--button-hover','#c4bfbf');
+        document.documentElement.style.setProperty('--modal-bg','rgba(255, 255, 255, 0.2)');
         logo.src='img/logo-dark.svg';
     } else {
         body.classList.add('light-theme');
@@ -21,6 +23,7 @@ themeBtn.onclick = function() {
         document.documentElement.style.setProperty('--bg','white');
         document.documentElement.style.setProperty('--text-color','black');
         document.documentElement.style.setProperty('--button-hover','#747272');
+        document.documentElement.style.setProperty('--modal-bg','rgba(0, 0, 0, 0.2)');
         logo.src='img/logo.svg';
     }
 }
@@ -93,11 +96,9 @@ function getDayInfo() {
 
  getDayInfo();
 
-
-
-
  for (let i = 0; i < buyBtn.length; i++) {
-    buyBtn[i].onclick = function () {
+    buyBtn[i].onclick = function() {
+        form.reset();
         let item;
         let img = itemForm.querySelector('.item-img');
         let itemName = itemForm.querySelector('.item-name');
@@ -119,3 +120,39 @@ closeBtn.onclick = function () {
     buyForm.classList.remove('active');
     buyForm.classList.add('hidden');
 }
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let formData = new FormData(form);
+
+    let name = form.previousElementSibling.querySelector('.item-name').innerText;
+
+    let count = formData.get('count');
+    let colorEng = formData.get('color');
+    let color;
+
+    switch (colorEng) {
+        case 'white':
+            color = 'белый';
+            break;
+        case 'black':
+            color = 'чёрный';
+            break;
+        case 'red':
+            color = 'красный';
+            break;
+    }
+
+    let comment = formData.get('comment');
+    let commentStr;
+
+    if (comment == "") {
+        commentStr = "";
+    } else {
+        commentStr = `\n Комментарий: ${comment}`;
+    }
+
+    alert(`Заказ на часы ${name} принят. \n Количество: ${count} \n Цвет: ${color} ${commentStr} `);
+    buyForm.classList.remove('active');
+    buyForm.classList.add('hidden');
+})
