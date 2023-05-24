@@ -31,7 +31,7 @@
                 </ul>
             </nav>
             <div class="header-buttons">
-                <button class="menu  fa-solid fa-bars"></button>
+                <button class="menu  fa-solid fa-bars hidden"></button>
                 <button class="theme fa-solid fa-moon"></button>
             </div>
         </div>
@@ -68,9 +68,11 @@
                     <button class="close fa-solid fa-xmark"></button>
                     <div class="item-info">
                         <img src="#" class="item-img">
-                        <p class="item-name"></p>
-                        <p class="item-date-text"></p>
-                        <p class="item-cost"></p>
+                        <div class="item-desc-container">
+                            <p class="item-name"></p>
+                            <p class="item-date-text"></p>
+                            <p class="item-cost"></p>
+                        </div>
                     </div>
 
                     <!-- <form action="https://echo.htmlacademy.ru/courses"  method="post" class="form"> -->
@@ -100,7 +102,7 @@
     
                         <fieldset class="field">
                             <legend class="form-title">Комментарий:</legend>
-                            <textarea class="comment-area" name="comment" maxlength="2000" rows="8" placeholder="Введите комментарий..."></textarea>
+                            <textarea class="comment-area" name="comment" maxlength="2000" rows="3" placeholder="Введите комментарий..."></textarea>
                         </fieldset>
                         <input class="submit-button button" type="submit" value="Купить">
                     </form>

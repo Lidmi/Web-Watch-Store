@@ -7,6 +7,8 @@ let buyForm = document.querySelector('.form-wrap');
 let closeBtn = document.querySelector('.close');
 let itemForm = document.querySelector('.item-info');
 let form = document.querySelector('.form');
+let menuBtn = document.querySelector('.menu');
+let nav = document.querySelector('.page-navigation');
 
 themeBtn.onclick = function() {
     if (body.classList.contains('light-theme')) {
@@ -156,3 +158,8 @@ form.addEventListener('submit', (e) => {
     buyForm.classList.remove('active');
     buyForm.classList.add('hidden');
 })
+
+
+    menuBtn.onclick = function() {
+        nav.classList.toggle('mobile-active');   
+}
